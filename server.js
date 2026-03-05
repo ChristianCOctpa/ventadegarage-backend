@@ -11,9 +11,11 @@ const app = express();
 
 // ================= CONFIGURACIÓN =================
 app.use(cors({
-  origin: "https://ventadegarage-three.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+    origin: [
+        "https://ventadegarage-frontend.vercel.app",
+        "https://ventadegarage-three.vercel.app"
+    ],
+    credentials: true
 }));
 
 app.options("*", cors());
